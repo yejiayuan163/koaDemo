@@ -14,7 +14,7 @@ app.use(async (ctx, next) => {
 })
 app.use(async (ctx, next) => {
   console.log('>>step 2')
-  await next()
+  await next()   //await等待异步
   console.log('<<step 2')
 })
 app.use(async (ctx, next) => {
