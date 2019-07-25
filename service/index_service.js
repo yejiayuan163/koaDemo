@@ -1,5 +1,5 @@
 const index = () => {
-    return '<div><a href="/">Index</a>&nbsp;&nbsp;&nbsp;<a href="/about">About</a>&nbsp;&nbsp;&nbsp;<a href="/world">World</a></div><h1>Index</h1><div><a target="_Blank" href="/ygfl.png">员工福利</a></div>'
+    return '<div><a href="/">Index</a>&nbsp;&nbsp;&nbsp;<a href="/about">About</a>&nbsp;&nbsp;&nbsp;<a href="/world">World</a></div><h1>Index</h1><div><a target="_Blank" href="/img/ygfl.png">员工福利</a></div>'
 }
 
 const about = () => {

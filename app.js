@@ -3,7 +3,11 @@ const app = new Koa();
 const index = require('./routes/index');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-session');
-const static = require('koa-static')
+const static = require('koa-static');
+const views = require('koa-views')
+app.use(views(__dirname + '/views', {
+  extension: 'ejs'
+}))
 app.use(bodyParser({
   enableTypes:['json', 'form', 'text']
 }))
@@ -32,7 +36,7 @@ app.use(async (ctx,next) => {
   if (ctx.path === '/favicon.ico') return;
   let n = ctx.session.views || 0;
   ctx.session.views = ++n;
-  ctx.session.token = ctx.session.token ? ctx.session.token + ctx.session.views : 'FLBNB'
+  ctx.session.token = ctx.session.token ? ctx.session.token : 'FLBNB'
   console.log('ctx.session:', ctx.session)
   await next()
 });
